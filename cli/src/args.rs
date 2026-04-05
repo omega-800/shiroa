@@ -120,6 +120,14 @@ pub struct CompileArgs {
     )]
     pub font_paths: Vec<PathBuf>,
 
+    /// Add additional directory that is searched for local typst packages.
+    #[clap(
+        long = "package-path",
+        value_name = "DIR",
+        env = "TYPST_PACKAGE_PATH",
+    )]
+    pub package_path: PathBuf,
+
     /// Output to directory, default in the same directory as the entry file.
     /// Relative paths are interpreted relative to the book's root directory.
     /// If omitted, shiroa uses #build-meta.build-dir from book.typ or defaults
